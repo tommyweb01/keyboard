@@ -31,7 +31,17 @@ div button:hover {
 
 button:hover{background-color:#0056b3;}
 
-textarea{width:100%;height:90px;padding:5px;font-size:16px;line-height:1.0;text-indent:0px;border:1px solid #cecfcf;border-radius:4px;box-sizing:border-box;}input,textarea{background-color:white;}button{padding:0px;padding-right:0px;margin-right:auto;}.keyboard-container{justify-content:center;width:100%;}.keyboard{display:flex;flex-wrap:wrap;justify-content:flex-start;width:fit-content;padding:5px 4px;border-radius:8px;width:100%;padding-top:3px;height:94px;align-items:center;overflow-y:auto;background-color:#cecfcf;border-radius:8px;border:1px solid black;}.keyboard button{display:inline-flex;justify-content:center;align-items:center;width:32px;height:25px;padding:8px;font-size:16px;margin-bottom:5px;border-style:solid;border:1px solid #999;background-color:#fff;box-shadow:1px 1px 1px #5e7a73,-1px -1px 1px #ffffff;color:black;border-radius:4px;cursor:pointer;}.keyboard button:active{background-color:black;}.button-container.keyboard-2-container{display:flex;justify-content:flex-end;gap:5px;margin-top:0px;}.button-container.keyboard-2-container button{width:100px;padding:3px 5px;font-weight:bold;font-size:12px;background-color:#333;margin-bottom:5px;color:#fff;border-radius:5px;cursor:pointer;transition:background-color 0.3s;}
+textarea{width:100%;height:250px;padding:5px;font-size:16px; text-indent:0px;border:1px solid #cecfcf;border-radius:4px;box-sizing:border-box;}input,textarea{background-color:white;}
+
+button{padding:0px;padding-right:0px;margin-right:auto;}
+
+.keyboard-container{justify-content:center;width:100%; margin-top: -25px;}
+
+.keyboard{display:flex;flex-wrap:wrap;justify-content:flex-start;width:fit-content;padding:5px 4px;border-radius:8px;width:100%;padding-top:3px;height:94px;align-items:center;overflow-y:auto;background-color:#cecfcf;border-radius:8px;border:1px solid black;}
+
+.keyboard button{display:inline-flex;justify-content:center;align-items:center;width:32px;height:25px;padding:8px;font-size:16px;margin-bottom:5px;border-style:solid;border:1px solid #999;background-color:#fff;box-shadow:1px 1px 1px #5e7a73,-1px -1px 1px #ffffff;color:black;border-radius:4px;cursor:pointer;}
+
+
 
 h2{font-size:10px;width:10;height:background-color:#ddd;margin-top:2px;margin-bottom:2px;}
 
@@ -53,7 +63,7 @@ button:hover{background-color:#2b2020;}
 
 .text-box{background:#fff;padding:10px 30px;border-radius:5px;width:100%;font-size:13px;display:inline-block;margin:0px 0;}
 
-.copybutton{cursor:pointer;background-color:#0e4fc5;color:white;padding:2px 5px;border-radius:5px;border:none;font-weight:bold;}
+.copybutton{cursor:pointer;background-color:#006869;color:white;padding:2px 5px;border-radius:5px;border:none;font-weight:bold;}
 
 .copybutton:hover{background-color:#0056b3;}#loading-screen{position:fixed;width:100%;height:100%;background:white;display:flex;justify-content:center;align-items:center;z-index:9999;animation:fadeOut 0.95s forwards 0.95s;}
 
@@ -84,261 +94,15 @@ button:hover{background-color:#2b2020;}
 
 
 @keyframes fadeOut{to{opacity:0;visibility:hidden;}}.loader{width:20px;height:20px;border-radius:50%;border:5px solid rgb(175,220,227);border-top:5px solid #fff;animation:spin 0.55s linear infinite;}@keyframes spin{100%{transform:rotate(360deg);}}</style>
-<body><div id="loading-screen"><div class="loader"></div></div><div class="container"><div class="profile-name">Keyboard <a href="https://tommydev27.github.io/tommy.fb-web/" target="_blank" style="text-decoration: none;"><i style="font-size: 15px; color: #0073eff9;" class="fab fa-dev"></i></a><a style="font-size: 10px; color: #41ff3c; margin-left: 75px; text-decoration: none;">Design web : Tommy Dev | V0.1.0</a></div><textarea id="inputText" placeholder="Tulis teks..." style="margin-bottom: 0px; resize: none;"></textarea><div class="button-container" style=" padding: 3px 0px;display: flex; gap: 15px; margin-top: -5px;"><button class="action-button salin" onclick="copyText()" style="background-color: #037112c2; color: white; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#9C27B0'; this.style.color='white';">Copy</button><button class="action-button hapus" onclick="clearText()" style="background-color: #fa7003; color: white; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#F44336'; this.style.color='white';">Clear</button><button class="action-button space" onclick="addSpace()" style="background-color: #8c8c8c; color: #fff; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#696969'; this.style.color='white';">Space</button><button class="action-button enter" onclick="addEnter()" style="background-color: #007bff; color: white; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#696969'; this.style.color='white';">Enter</button><button class="action-button" onclick="moveLeft()" style="background-color: black; color: white; font-weight: bold; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#000000'; this.style.color='white';">⇠</button><button class="action-button" onclick="moveRight()" style="background-color: black; color: white; font-weight: bold; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#000000'; this.style.color='white';">⇢</button></div><div><button id="generateButton" onclick="generateStyles()" style=" border-radius: 5px; font-size: 12px; padding: 2px 5px; margin-left: 0px; margin-top: 0px; background-color: #ad0101; border: none; color: #fff; font-weight: bold;">Create🐬</button> <button id="homeButton" style="border: none; background-color: #333; border-radius: 5px; font-size: 12px; cursor: pointer; color: #fff; padding: 2px 5px; margin-bottom: 5px; margin-left: 0px; font-weight: bold;">font 🛅</button><div class="controls" style="display: flex; justify-content: space-between; width: 25%; margin: 0px auto;"><div class="slider-container" style="align-items: center; gap: 0px; margin-top: -25px;"><input type="range" id="glitchRange" min="1" max="10" value="3" style="width: 100px;"></div><div class="slider-container" style="align-items: center; gap: 0px; margin-top: -25px; padding: 0px 5px;"><input type="range" id="cursorRange" min="0" max="20" value="0" style="width: 100px;"></div></div><div id="glitchContainer" style="display: none; margin-top: 0px; margin-bottom: 5px; padding: 20px; border: 1px solid #ccc; border-radius : 5px; background-color: #f9f9f9; width: 100%; margin-left: auto; margin-right: auto;"><div id="glitchOutput" style="font-size: 15px; font-weight: bold; white-space: pre-wrap; word-wrap: break-word; color: #333;"></div></div>
-<div id="resultContainer" style="display: none;"> <div id="result"></div></div>
-<script>
-function generateStyles() {
-    const textInput = document.getElementById("inputText");
-    if (!textInput) {
-        alert("Input teks tidak ditemukan.");
-        return;
-    }
+<body><div id="loading-screen"><div class="loader"></div></div><div class="container"><div class="profile-name">Keyboard <a href="https://tommydev27.github.io/tommy.fb-web/" target="_blank" style="text-decoration: none;"><i style="font-size: 15px; color: #0073eff9;" class="fab fa-dev"></i></a><a style="font-size: 10px; color: #41ff3c; margin-left: 75px; text-decoration: none;">Design web : Tommy Dev | V0.1.0</a></div>
 
-    const text = textInput.value.trim();
-    const resultDiv = document.getElementById("result");
-    const generateButton = document.getElementById("generateButton");
-    const resultContainer = document.getElementById("resultContainer");
-
-    if (!text) {
-        alert("Masukkan teks untuk menghasilkan gaya.");
-        return;
-    }
-
-    resultDiv.innerHTML = ""; 
-
-    const styles = [
-      { name: "styles", style: (txt) => `<span style="color: #41ff3c;">${txt}︻ꔮ芅ﾃ༭ꕹᆖꔷ一一一一</span>` },
-      { name: "styles", style: (txt) => `<span style="color: #41ff3c;">${txt}ꜛꕤ ツ︻ꔮﾃꔷーメ</span>` },
-      
-      { name: "styles", style: (txt) => `<span style="color: #41ff3c;">༺ꕤ༒${txt}༒ꕤ༻</span>` },
-      { 
-        name: "styles", 
-        style: (txt) => {
-          const topBorder = "ꕤᜆꣻꣻꣻꣻꣻꣻꣻꣻꣻꣻꣻꣻꣻヽꕤ";
-          const bottomBorder = "ꕤ乀＿＿＿＿＿＿＿＿＿ノꕤ";
-          return `<span style="color: #41ff3c;">${topBorder}\n一＊ꕤ（ ${txt} ）ꕤ＊一\n${bottomBorder}</span>`;
-        }
-      },
-      { 
-        name: "styles", 
-        style: (txt) => `
-          <span style="color: #41ff3c;">
-╭─╮│╭─╮ 🌺───────🌺
-╰─╭─╮─╯│╭───────╮│
-──│││──││　${txt}　││
-╭─╰─╯─╮│╰───────╯│
-╰─╯│╰─╯ 🌺───────🌺
-          </span>`
-      },
-      { 
-        name: "styles", 
-        style: (txt) => `
-          <span style="color: #41ff3c;">
-╭⚘﷽⚘─────────────➢
-╰✥©️✥╢♠║♦║♣║♥╟✥®️✥
-╭🌸${txt}🌸──────────➢
-          </span>`
-      },
-      { 
-        name: "styles", 
-        style: (txt) => `
-<span style="color: #41ff3c;">
-◥🇧🇮█▔▔█◣♦️◢█▔▔█🇧🇮◤
-◄➖►──◄${txt}►──◄➖►
-◢🇧🇮█▁▁█◤♦️◥█▁▁█🇧🇮◣
-          </span>`
-      },
-      { 
-        name: "styles", 
-        style: (txt) => `
-          <span style="color: #41ff3c;">
-🎶 ♡${txt}　　　　　　　
-05:00 ━━━●───── 01:30
-🔄　　◀️　　⏸️　　▶️　　☰
-</span>`
-      },
-      { 
-        name: "styles", 
-        style: (txt) => `
-          <span style="color: #41ff3c;">
-🎀${txt}🎀╮　　╭🌸🌿
-╭╮▒╭──╮╮╭┐──╮
-││▒│╭╮││││─╮│
-││▒│││││││─┘│
-││▒│││││││╭─┘
-│└─╮╰╯│╰╯│╰─┐
-╰──╯──╯──╯──╯
-          </span>`
-      },
-      { 
-        name: "styles", 
-        style: (txt) => `
-          <span style="color: #41ff3c;">
-╭🟥◣╲◖◀️◗╮╭◖▶️◗╱◢🟥╮
-╲╭♦️╮⋆╭••╯╰••╮⋆╭♦️╮╱
-🔴)(⬤)(🔴${txt}🔴)(⬤)(🔴
-╱╰♦️╯⋆╰••╮╭••╯⋆╰♦️╯╲
-╰🟥◤╱◖◀️◗╯╰◖◀️◗╲◥🟥╯
-          </span>`
-      }
-    ];
-
-    styles.forEach(({ name, style }) => {
-        const div = document.createElement("div");
-        div.className = "style-item hidden"; // Mulai dalam keadaan tersembunyi
-        div.innerHTML = `<span><strong>${name}:</strong></span><pre>${style(text)}</pre>`;
-
-        const button = document.createElement("button");
-        button.className = "copy-button";
-        button.textContent = "Copy";
-button.onclick = function() {
-    // Mengambil hanya teks tanpa elemen HTML atau spasi ekstra
-    const plainText = style(text).replace(/<span[^>]*>/g, "").replace(/<\/span>/g, "");
-    
-    navigator.clipboard.writeText(plainText).then(() => {
-        alert("Teks berhasil disalin!");
-    }).catch(() => {
-        alert("Gagal menyalin teks.");
-    });
-};
+<textarea id="inputText" placeholder="Tulis teks..." style="margin-bottom: 0px; resize: none;"></textarea>
 
 
-        div.appendChild(button);
-        resultDiv.appendChild(div);
-
-        // Tambahkan animasi setelah delay singkat
-        setTimeout(() => {
-            div.classList.add("slide-down");
-        }, 100);
-    });
-
-    resultContainer.style.display = "block";
-
-    // Ubah tombol menjadi "Nonaktif"
-    generateButton.textContent = "Nonaktif";
-    generateButton.onclick = function() {
-        resultContainer.style.display = "none";
-        resultDiv.innerHTML = "";  
-        generateButton.textContent = "Create🐬";
-        generateButton.onclick = generateStyles; 
-    };
-}
-</script>
-
-<div class="button-container-wrapper">
-    <div class="button-container">
-        <button id="numbers">
-            <span style="font-size: 15px;  text-align: center;">𝜟 𝜵</span>
-        </button>
-
-        <button id="capitalLetters">
-            <span style="font-size: 15px;  text-align: center; margin-top: 2px;">❶㉣⓷</span>
-        </button>
-
-        <button id="toggleSpecialKeyboard" style="color: #db0000;">
-            <span style=" text-align: center;font-size: 18px; text-align: center; border-sol: none;">🂱🂼🂽</span>
-        </button>
-
-        <button id="toggleCapitalLetters">
-            <span style="font-size: 15px;  text-align: center;">🦸🏻‍♂️🦹🏻‍♂️</span>
-        </button>
-
-        <button id="toggleExtraKeyboard">
-            <span style="font-size: 15px;  text-align: center;">𓆉 𓆣𓇻</span>
-        </button>
-
-        <button id="toggleExtraKeyboard1">
-            <span style="font-size: 15px;  text-align: center;">★✯✭</span>
-        </button>
-
-        <button id="symbols">
-            <span style="font-size: 15px;  text-align: center;">s̸̳̋t̸̳y̸̳l̳e̳</span>
-        </button>
-    </div>
-</div>
-</div>
-
-
-<div class="button-container-wrapper">
-    <div class="button-container">
-        <button id="numbers1">
-            <span><a style=" font-size: 15px;  text-align: center; display: flex; justify-content: center;">🅐🅑🅒</span>
-        </button>
-
-        <button id="numbers2">
-            <span><a style="font-size: 15px;  text-align: center;">🅰🅱🅲</span>
-        </button>
-
-        <button id="numbers3">
-            <span><a style=" font-size: 15px;  text-align: center;">𝕬𝕭𝕮</span>
-        </button>
-
-        <button id="numbers4">
-            <span><a style="font-size: 15px;  text-align: center;">卂乃匚</span>
-        </button>
-
-        <button id="numbers5">
-            <span><a style="font-size: 15px;  text-align: center;">𝔸𝔹ℂ</span>
-        </button>
-        
-        
-       <button id="numbers6">
-            <span><a style="font-size: 15px;  text-align: center;">أرابيك</span>
-        </button>
-        
-        
-        <button id="numbers7">
-            <span><a style="font-size: 15px;  text-align: center;">𝗔𝗕𝗖</span>
-            
-           <button id="numbers8">
-              <span><a style="font-size: 15px;  text-align: center;">A҉B҉C҉</a></span>
-          </button>
-          <button id="numbers9">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">𝘼𝘽𝘾</a></span>
-          </button>
-          <button id="numbers10">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">𝙰𝙱𝙲</a></span>
-          </button>
-          <button id="numbers11">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">𝜟𝜝𝜮</a></span>
-          </button>
-          <button id="numbers12">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">ᏫᏤᏆ</a></span>
-          </button>
-          <button id="numbers13">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">∂єℓ</a></span>
-          </button>
-          <button id="numbers14">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">ꊼꌃꁅ</a></span>
-          </button>
-          <button id="numbers15">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">d̸̻̉̔͗̈́̚č̵̨̙̼̫̻͉͒̾̄̉͝v̴̡̮̣̥̩̻̲̀̓͐͜͝</a></span>
-          </button>
-          <button id="numbers16">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">a⃞b⃞c⃞</a></span>
-          </button>
-          <button id="numbers17">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">A͢͢͠͠༽</a></span>
-          </button>
-          <button id="numbers18">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">⎱A̷̸̳⃜⎱⎱B̷̸̳⃜⎱</a></span>
-          </button>
-          <button id="numbers19">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">ₐ ᴮ ᶜ</a></span>
-          </button>
-          <button id="numbers20">
-              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">ค๒ς</a></span>
-          </button>
-            
-        </button>
-    </div>
-</div>
 
    <div class="button-container keyboard-2-container">
      
-    <button id="letters" onclick="toggleKeyboard()">
-         <span>⌨️ Keyboard 1</span>
-          </button>
+
       </div>
       <div class="keyboard-container">
 
@@ -6499,6 +6263,280 @@ button.onclick = function() {
       </div>
     </div>
     
+<div class="button-container" style=" padding: 3px 0px;display: flex; gap: 15px; margin-top: 0px;"><button class="action-button salin" onclick="copyText()" style="background-color: #037112c2; color: white; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#9C27B0'; this.style.color='white';">Copy</button><button class="action-button hapus" onclick="clearText()" style="background-color: #fa7003; color: white; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#F44336'; this.style.color='white';">Clear</button><button class="action-button space" onclick="addSpace()" style="background-color: #8c8c8c; color: #fff; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#696969'; this.style.color='white';">Space</button><button class="action-button enter" onclick="addEnter()" style="background-color: #007bff; color: white; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#696969'; this.style.color='white';">Enter</button><button class="action-button" onclick="moveLeft()" style="background-color: black; color: white; font-weight: bold; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#000000'; this.style.color='white';">⇠</button><button class="action-button" onclick="moveRight()" style="background-color: black; color: white; font-weight: bold; border-radius: 4px; width: 40px; height: 20px; display: flex; justify-content: center; align-items: center;" onmouseover="this.style.backgroundColor='#1F45FC'; this.style.color='white';" onmouseout="this.style.backgroundColor='#000000'; this.style.color='white';">⇢</button></div><div>
+
+    <button id="letters" onclick="toggleKeyboard()" style=" padding:2px 3px;font-weight:bold;font-size:12px;background-color:#333;color:#fff;border-radius:5px; border-style: none;" >
+         <span >⌨️ Keyboard</span>
+          </button>
+          
+          
+        <button id="generateButton" onclick="generateStyles()" style=" border-radius: 5px; font-size: 12px; padding: 2px 4px; margin-left: 0px; border-style: none; margin-top: 0px; background-color: #006869; border: none; color: #fff; font-weight: bold;">Create Text</button>
+        
+        <button id="homeButton" style="border: none; background-color: #006869; border-radius: 5px; font-size: 12px; cursor: pointer; color: #fff; padding: 2px 5px; margin-bottom: 5px; margin-left: 0px; font-weight: bold;">Font colletion</button>
+  
+  
+<button id="homeButton" 
+        style="border: none; background-color: #006869; border-radius: 5px; font-size: 12px; cursor: pointer; color: #fff; padding: 2px 5px; margin-bottom: 5px; margin-left: 0px; font-weight: bold;" 
+        onclick="window.location.href='https://tommyweb01.github.io/glitchtext/';">
+    Glitch Text ⚡
+</button>
+
+
+<div id="glitchContainer" style="display: none; margin-top: 0px; margin-bottom: 5px; padding: 20px; border: 1px solid #ccc; border-radius : 5px; background-color: #f9f9f9; width: 100%; margin-left: auto; margin-right: auto;"><div id="glitchOutput" style="font-size: 15px; font-weight: bold; white-space: pre-wrap; word-wrap: break-word; color: #333;"></div></div>
+
+
+
+<div id="resultContainer" style="display: none;"> <div id="result"></div></div>
+<script>
+function generateStyles() {
+    const textInput = document.getElementById("inputText");
+    if (!textInput) {
+        alert("Input teks tidak ditemukan.");
+        return;
+    }
+
+    const text = textInput.value.trim();
+    const resultDiv = document.getElementById("result");
+    const generateButton = document.getElementById("generateButton");
+    const resultContainer = document.getElementById("resultContainer");
+
+    if (!text) {
+        alert("Masukkan teks untuk menghasilkan gaya.");
+        return;
+    }
+
+    resultDiv.innerHTML = ""; 
+
+    const styles = [
+      { name: "styles", style: (txt) => `<span style="color: #41ff3c;">${txt}︻ꔮ芅ﾃ༭ꕹᆖꔷ一一一一</span>` },
+      { name: "styles", style: (txt) => `<span style="color: #41ff3c;">${txt}ꜛꕤ ツ︻ꔮﾃꔷーメ</span>` },
+      
+      { name: "styles", style: (txt) => `<span style="color: #41ff3c;">༺ꕤ༒${txt}༒ꕤ༻</span>` },
+      { 
+        name: "styles", 
+        style: (txt) => {
+          const topBorder = "ꕤᜆꣻꣻꣻꣻꣻꣻꣻꣻꣻꣻꣻꣻꣻヽꕤ";
+          const bottomBorder = "ꕤ乀＿＿＿＿＿＿＿＿＿ノꕤ";
+          return `<span style="color: #41ff3c;">${topBorder}\n一＊ꕤ（ ${txt} ）ꕤ＊一\n${bottomBorder}</span>`;
+        }
+      },
+      { 
+        name: "styles", 
+        style: (txt) => `
+          <span style="color: #41ff3c;">
+╭─╮│╭─╮ 🌺───────🌺
+╰─╭─╮─╯│╭───────╮│
+──│││──││　${txt}　││
+╭─╰─╯─╮│╰───────╯│
+╰─╯│╰─╯ 🌺───────🌺
+          </span>`
+      },
+      { 
+        name: "styles", 
+        style: (txt) => `
+          <span style="color: #41ff3c;">
+╭⚘﷽⚘─────────────➢
+╰✥©️✥╢♠║♦║♣║♥╟✥®️✥
+╭🌸${txt}🌸──────────➢
+          </span>`
+      },
+      { 
+        name: "styles", 
+        style: (txt) => `
+<span style="color: #41ff3c;">
+◥🇧🇮█▔▔█◣♦️◢█▔▔█🇧🇮◤
+◄➖►──◄${txt}►──◄➖►
+◢🇧🇮█▁▁█◤♦️◥█▁▁█🇧🇮◣
+          </span>`
+      },
+      { 
+        name: "styles", 
+        style: (txt) => `
+          <span style="color: #41ff3c;">
+🎶 ♡${txt}　　　　　　　
+05:00 ━━━●───── 01:30
+🔄　　◀️　　⏸️　　▶️　　☰
+</span>`
+      },
+      { 
+        name: "styles", 
+        style: (txt) => `
+          <span style="color: #41ff3c;">
+🎀${txt}🎀╮　　╭🌸🌿
+╭╮▒╭──╮╮╭┐──╮
+││▒│╭╮││││─╮│
+││▒│││││││─┘│
+││▒│││││││╭─┘
+│└─╮╰╯│╰╯│╰─┐
+╰──╯──╯──╯──╯
+          </span>`
+      },
+      { 
+        name: "styles", 
+        style: (txt) => `
+          <span style="color: #41ff3c;">
+╭🟥◣╲◖◀️◗╮╭◖▶️◗╱◢🟥╮
+╲╭♦️╮⋆╭••╯╰••╮⋆╭♦️╮╱
+🔴)(⬤)(🔴${txt}🔴)(⬤)(🔴
+╱╰♦️╯⋆╰••╮╭••╯⋆╰♦️╯╲
+╰🟥◤╱◖◀️◗╯╰◖◀️◗╲◥🟥╯
+          </span>`
+      }
+    ];
+
+    styles.forEach(({ name, style }) => {
+        const div = document.createElement("div");
+        div.className = "style-item hidden"; // Mulai dalam keadaan tersembunyi
+        div.innerHTML = `<span><strong>${name}:</strong></span><pre>${style(text)}</pre>`;
+
+        const button = document.createElement("button");
+        button.className = "copy-button";
+        button.textContent = "Copy";
+button.onclick = function() {
+    // Mengambil hanya teks tanpa elemen HTML atau spasi ekstra
+    const plainText = style(text).replace(/<span[^>]*>/g, "").replace(/<\/span>/g, "");
+    
+    navigator.clipboard.writeText(plainText).then(() => {
+        alert("Teks berhasil disalin!");
+    }).catch(() => {
+        alert("Gagal menyalin teks.");
+    });
+};
+
+
+        div.appendChild(button);
+        resultDiv.appendChild(div);
+
+        // Tambahkan animasi setelah delay singkat
+        setTimeout(() => {
+            div.classList.add("slide-down");
+        }, 100);
+    });
+
+    resultContainer.style.display = "block";
+
+    // Ubah tombol menjadi "Nonaktif"
+    generateButton.textContent = "Nonaktif";
+    generateButton.onclick = function() {
+        resultContainer.style.display = "none";
+        resultDiv.innerHTML = "";  
+        generateButton.textContent = "Create🐬";
+        generateButton.onclick = generateStyles; 
+    };
+}
+</script>
+
+<div class="button-container-wrapper">
+    <div class="button-container">
+        <button id="numbers">
+            <span style="font-size: 15px;  text-align: center;">𝜟 𝜵</span>
+        </button>
+
+        <button id="capitalLetters">
+            <span style="font-size: 15px;  text-align: center; margin-top: 2px;">❶㉣⓷</span>
+        </button>
+
+        <button id="toggleSpecialKeyboard" style="color: #db0000;">
+            <span style=" text-align: center;font-size: 18px; text-align: center; border-sol: none;">🂱🂼🂽</span>
+        </button>
+
+        <button id="toggleCapitalLetters">
+            <span style="font-size: 15px;  text-align: center;">🦸🏻‍♂️🦹🏻‍♂️</span>
+        </button>
+
+        <button id="toggleExtraKeyboard">
+            <span style="font-size: 15px;  text-align: center;">𓆉 𓆣𓇻</span>
+        </button>
+
+        <button id="toggleExtraKeyboard1">
+            <span style="font-size: 15px;  text-align: center;">★✯✭</span>
+        </button>
+
+        <button id="symbols">
+            <span style="font-size: 15px;  text-align: center;">s̸̳̋t̸̳y̸̳l̳e̳</span>
+        </button>
+    </div>
+</div>
+</div>
+
+
+<div class="button-container-wrapper">
+    <div class="button-container">
+        <button id="numbers1">
+            <span><a style=" font-size: 15px;  text-align: center; display: flex; justify-content: center;">🅐🅑🅒</span>
+        </button>
+
+        <button id="numbers2">
+            <span><a style="font-size: 15px;  text-align: center;">🅰🅱🅲</span>
+        </button>
+
+        <button id="numbers3">
+            <span><a style=" font-size: 15px;  text-align: center;">𝕬𝕭𝕮</span>
+        </button>
+
+        <button id="numbers4">
+            <span><a style="font-size: 15px;  text-align: center;">卂乃匚</span>
+        </button>
+
+        <button id="numbers5">
+            <span><a style="font-size: 15px;  text-align: center;">𝔸𝔹ℂ</span>
+        </button>
+        
+        
+       <button id="numbers6">
+            <span><a style="font-size: 15px;  text-align: center;">أرابيك</span>
+        </button>
+        
+        
+        <button id="numbers7">
+            <span><a style="font-size: 15px;  text-align: center;">𝗔𝗕𝗖</span>
+            
+           <button id="numbers8">
+              <span><a style="font-size: 15px;  text-align: center;">A҉B҉C҉</a></span>
+          </button>
+          <button id="numbers9">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">𝘼𝘽𝘾</a></span>
+          </button>
+          <button id="numbers10">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">𝙰𝙱𝙲</a></span>
+          </button>
+          <button id="numbers11">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">𝜟𝜝𝜮</a></span>
+          </button>
+          <button id="numbers12">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">ᏫᏤᏆ</a></span>
+          </button>
+          <button id="numbers13">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">∂єℓ</a></span>
+          </button>
+          <button id="numbers14">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">ꊼꌃꁅ</a></span>
+          </button>
+          <button id="numbers15">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">d̸̻̉̔͗̈́̚č̵̨̙̼̫̻͉͒̾̄̉͝v̴̡̮̣̥̩̻̲̀̓͐͜͝</a></span>
+          </button>
+          <button id="numbers16">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">a⃞b⃞c⃞</a></span>
+          </button>
+          <button id="numbers17">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">A͢͢͠͠༽</a></span>
+          </button>
+          <button id="numbers18">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">⎱A̷̸̳⃜⎱⎱B̷̸̳⃜⎱</a></span>
+          </button>
+          <button id="numbers19">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">ₐ ᴮ ᶜ</a></span>
+          </button>
+          <button id="numbers20">
+              <span><a style="font-size: 15px;  text-align: center; padding: 0px 25px;">ค๒ς</a></span>
+          </button>
+            
+        </button>
+    </div>
+</div>
+
+      
+      
       
 <script>
 function copyText() {
@@ -6660,8 +6698,8 @@ document.getElementById('numbers20').addEventListener('click', () => toggleKeybo
      </div>
  
         <div class id= "container" style=" width: 100%;">
-      <h1 style="font-size: 15px; display: flex; align-items: center; justify-content: space-between; padding: 0px; font-weight:bold; color:#41ff3c;"> 
-        font Style </h1>
+      <h1 style="font-size: 12px; display: flex; align-items: center; justify-content: space-between; padding: 0px; font-weight:bold; color:white; margin-top: -14px; margin-bottom: -8px;"> 
+        Font Style </h1>
 
     <!-- Overlay Latar Belakang -->
     <div id="overlay">
